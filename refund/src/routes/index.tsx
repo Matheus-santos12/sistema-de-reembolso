@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router";
-import { EmployeeRoutes } from "../pages/EmployeeRoutes";
+import { EmployeeRoutes } from "./EmployeeRoutes";
 
 export function Routes() {
   return (
