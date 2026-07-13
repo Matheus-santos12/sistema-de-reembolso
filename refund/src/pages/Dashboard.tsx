@@ -25,11 +25,13 @@ export function Dashboard() {
   const [totalOfPage, setTotalOfPage] = useState(0);
   const [refunds, setRefunds] = useState<RefundItemProps[]>([REFUND_EXAMPLE]);
 
-  async function fetchRefunds(e: React.SubmitEvent) {
+  async function fetchRefunds() {
     try {
-      const response = await api.get(
+      const response = await api.get<RefundPaginationAPIResponse>(
         `/refunds?name=${name.trim()}&page=${page}&perPage=${PER_PAGE}`,
       );
+
+      console.log(response.data);
     } catch (error) {
       console.log(error);
 
